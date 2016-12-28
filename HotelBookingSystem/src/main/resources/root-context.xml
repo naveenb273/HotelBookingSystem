@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <!-- Root Context: defines shared resources visible to all other web components -->
+  <!-- Service Beans : Starts -->
+  <bean id="rbService" class="com.mindtree.hbs.service.RoomBookingServiceImpl">
+    <property name="roomBookingDAO" ref="roomBookingDAO"></property>
+  </bean>
+  
+  <bean id="lhService" class="com.mindtree.hbs.service.ListHotelsServiceImpl">
+    <property name="listHotelsDAO" ref="listHotelsDAO"></property>
+  </bean>
+  <!-- Service Beans : Ends -->
+
+  <!-- DAO Beans : Starts -->
+  <bean id="roomBookingDAO" class="com.mindtree.hbs.dao.RoomBookingDAOImpl"></bean>
+  
+  <bean id="listHotelsDAO" class="com.mindtree.hbs.dao.ListHotelsDAOImpl"></bean>
+  <!-- DAO Beans : Ends -->
+
+  <!-- Model Beans : Starts -->
+  <bean id="roomBookingVO" class="com.mindtree.hbs.model.RoomBookingVO"></bean>
+  
+  <bean id="roomBookingAjaxRes" class="com.mindtree.hbs.model.RoomBookingAjaxRes"></bean>
+  <!-- Model Beans : Ends -->
+</beans>
